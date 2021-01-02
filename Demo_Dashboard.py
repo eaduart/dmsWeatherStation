@@ -59,23 +59,23 @@ top  = [[sg.Text('DM\'s super weather station', size=(50,1), justification='c', 
         ]
 
 city_name, country, temperature, pressure, humidity, descrption = get_weather_info(demo, 2514256)
-Malaga = [[sg.Text(city_name, font='Any 30')],
-            [sg.Text("Temp: " + str(temperature) + "F", key='-malagatemp-', font='Any 20')],
-            [sg.T("Humidity: " + str(humidity), font='Any 20')],
+Malaga = [[sg.Text(city_name, font='Any 30',background_color='Purple')],
+            [sg.Text("Temp: " + str(temperature) + "F", key='-malagatemp-', font='Any 20',background_color='Purple')],
+            [sg.T("Humidity: " + str(humidity), font='Any 20',background_color='Purple')],
             ]
 
 city_name, country, temperature, pressure, humidity, descrption = get_weather_info(demo, 5810490)
-Silverdale = [[sg.Text(city_name, font='Any 30')],
-            [sg.Text("Temp: " + str(temperature) + "F",key='-silverdaletemp-', font='Any 20')],
-            [sg.T("Humidity: " + str(humidity), font='Any 20')],
+Silverdale = [[sg.Text(city_name, font='Any 30',background_color='Purple')],
+            [sg.Text("Temp: " + str(temperature) + "F",key='-silverdaletemp-', font='Any 20',background_color='Purple')],
+            [sg.T("Humidity: " + str(humidity), font='Any 20',background_color='Purple')],
             ]
 
 
 layout = [
           [sg.Column(top_banner, size=(1000, 60), pad=(20,20), background_color=DARK_HEADER_COLOR)],
           [sg.Column(top, size=(1000, 90), pad=BPAD_TOP)],
-          [sg.Column(Malaga,size=(480, 330), pad=BPAD_TOP),
-           sg.Column(Silverdale,size=(480, 330), pad=BPAD_TOP)]
+          [sg.Column(Malaga,size=(480, 330), pad=BPAD_TOP,background_color='Purple'),
+           sg.Column(Silverdale,size=(480, 330), pad=BPAD_TOP,background_color='Purple')]
          ]
 
 window = sg.Window('Dashboard PySimpleGUI-Style', layout, margins=(0,0), background_color=BORDER_COLOR, no_titlebar=True, grab_anywhere=True)
