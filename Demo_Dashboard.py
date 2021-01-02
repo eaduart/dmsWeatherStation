@@ -51,7 +51,7 @@ BPAD_RIGHT = ((10,20), (10, 20))
 
 
 top_banner = [[
-               sg.Text(updatetime(), font='Any 20', justification='c', background_color=DARK_HEADER_COLOR, key='-clock-')]
+               sg.Text(updatetime(), font='Any 38', justification='c', background_color=DARK_HEADER_COLOR, key='-clock-')]
              ]
 
 top  = [[sg.Text('DM\'s super weather station', size=(50,1), justification='c', pad=BPAD_TOP, font='Any 20')],
@@ -59,23 +59,23 @@ top  = [[sg.Text('DM\'s super weather station', size=(50,1), justification='c', 
         ]
 
 city_name, country, temperature, pressure, humidity, descrption = get_weather_info(demo, 2514256)
-Malaga = [[sg.Text(city_name, font='Any 20')],
-            [sg.Text("Temp: " + str(temperature) + "F", key='-malagatemp-')],
-            [sg.T("Humidity: " + str(humidity))],
+Malaga = [[sg.Text(city_name, font='Any 30')],
+            [sg.Text("Temp: " + str(temperature) + "F", key='-malagatemp-', font='Any 20')],
+            [sg.T("Humidity: " + str(humidity), font='Any 20')],
             ]
 
 city_name, country, temperature, pressure, humidity, descrption = get_weather_info(demo, 5810490)
-Silverdale = [[sg.Text(city_name, font='Any 20')],
-            [sg.Text("Temp: " + str(temperature) + "F",key='-silverdaletemp-')],
-            [sg.T("Humidity: " + str(humidity))],
+Silverdale = [[sg.Text(city_name, font='Any 30')],
+            [sg.Text("Temp: " + str(temperature) + "F",key='-silverdaletemp-', font='Any 20')],
+            [sg.T("Humidity: " + str(humidity), font='Any 20')],
             ]
 
 
 layout = [
-          [sg.Column(top_banner, size=(900, 60), pad=(20,20), background_color=DARK_HEADER_COLOR)],
-          [sg.Column(top, size=(900, 90), pad=BPAD_TOP)],
-          [sg.Column(Malaga,size=(430, 120), pad=BPAD_TOP),
-           sg.Column(Silverdale,size=(430, 120), pad=BPAD_TOP)]
+          [sg.Column(top_banner, size=(1000, 60), pad=(20,20), background_color=DARK_HEADER_COLOR)],
+          [sg.Column(top, size=(1000, 90), pad=BPAD_TOP)],
+          [sg.Column(Malaga,size=(480, 330), pad=BPAD_TOP),
+           sg.Column(Silverdale,size=(480, 330), pad=BPAD_TOP)]
          ]
 
 window = sg.Window('Dashboard PySimpleGUI-Style', layout, margins=(0,0), background_color=BORDER_COLOR, no_titlebar=True, grab_anywhere=True)
